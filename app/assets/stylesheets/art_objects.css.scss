@@ -58,9 +58,10 @@ input[type=search] {
 
 .first-section {
 	height: 55em;
-
 	.h1-tag {
 		background: url(image-path('marble-bg.png'));
+		border-top: 2px solid #dbdbdb;
+		border-bottom: 2px solid #dbdbdb;
 		h1 {
 			padding: 0;
 			margin: 0 0 1em 0;
@@ -83,6 +84,9 @@ input[type=search] {
 
 .object-list {
 	margin-top: 2em;
+	background: #f7f7f7;
+	border-top: 2px solid #dbdbdb;
+	border-bottom: 2px solid #dbdbdb;
 	img {
 		width: 4em;
 		height: 4em;
