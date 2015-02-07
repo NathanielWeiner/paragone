@@ -59,6 +59,17 @@ input[type=search] {
 		text-align: center;
 	}
 }
+
+.headroom {
+    transition: transform 500ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%) !important;
+}
+.headroom--unpinned {
+    transform: translateY(120%) !important;
+}
+
 @media all and  (max-width: 767px) {
 	.nav li {
 		width: 100%;
