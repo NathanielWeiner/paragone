@@ -1,0 +1,1 @@
+TheWalters.apikey = ENV['the_walters_key']
