@@ -2,32 +2,52 @@
 <html>
 <head>
   <title>Paragone</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <ul>
-    <% if user_signed_in? %>
-      <li><%= link_to "Settings", edit_user_registration_path, :data => {:bypass => true} %></li>
-      <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :data => {:bypass => true} %></li>
-    <% else %>
-      <li><%= link_to "Login", new_user_session_path %></li>
-      <li><%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %></li>
-      <li><%= link_to "Sign Up", new_registration_path(:user) %></li>
-    <% end %>
-  </ul>
-
-  <% if user_signed_in? %>
-    <% if current_user.provider == "twitter" %>
-      <p class="text-right">Signed in through twitter as <%= current_user.twitter_handle %></p>
-    <% else %>
-      <p class="text-right">Signed in as <%= current_user.email %></p>
-    <% end %>
-  <% end %>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+
+	<header class="navbar navbar-fixed-top">
+      <nav class="container-fluid" role="navigation">
+        <div class="navbar-header">
+          <a href="#about_me" class="navbar-brand">Paragone</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> 
+        </div>
+        <ul class="nav nav-stacked navbar-right collapse navbar-collapse">
+          <li class="active"><a data-scroll href="#about_me">Top Trending</a></li>
+          <li><a data-scroll href="#">Curated</a></li>
+          <li><a data-scroll href="#">Add Your Own</a></li>
+          <li><a data-scroll href="#">Contact</a></li>
+          <% if user_signed_in? %>
+			      <li><%= link_to "Settings", edit_user_registration_path, :data => {:bypass => true} %></li>
+			      <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :data => {:bypass => true} %></li>
+			    <% else %>
+			      <li><%= link_to "Login", new_user_session_path %></li>
+			      <li><%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %></li>
+			      <li><%= link_to "Sign Up", new_registration_path(:user) %></li>
+			    <% end %>
+			    <% if user_signed_in? %>
+				    <% if current_user.provider == "twitter" %>
+				      <li>Signed in through twitter as <%= current_user.twitter_handle %></li>
+				    <% else %>
+				      <li>Signed in as <%= current_user.email %></li>
+				    <% end %>
+				  <% end %>
+        </ul>
+      </nav>
+    </header>
 <%= yield %>
 
 </body>
