@@ -1,4 +1,4 @@
-#Paragone
+#PARAGONE
 
 ##The best of The Walters Art Museum, chosen by visitors like you.
 ------
@@ -20,13 +20,13 @@ Second, Paragone can be used by teachers and professors of art, art history, and
 Finally, Paragone could be an excellent resource for researchers interested in society's engagement with art in a museum setting. We chose to link each prompt answer with Twitter to aid in this type of research.
 
 ##Technologies Used
-+Ruby 2.1.2
-+Rails 4.2.0
-+Devise/Omniauth
-+Twitter Bootstrap
-+Figaro
-+Nokogiri
-+[Walters Art Museum Collection API](http://api.thewalters.org/)
+* Ruby 2.1.2
+* Rails 4.2.0
+* Devise/Omniauth
+* Twitter Bootstrap
+* Figaro
+* Nokogiri
+* [Walters Art Museum Collection API](http://api.thewalters.org/)
 
 ##Contact
 Paragone was developed by [Lydia Animosa](http://github.com/lydianimosa/), [Salvador Hernandez](http://github.com/clickclickonsal/), [Harrison Tan](http://github.com/codeanpeace/), [Nate Weiner](http://github.com/NathanielWeiner/), [Quint Gregory](http://michellesmithcollaboratory.umd.edu), and [Abram Fox](http://abramfox.com).
