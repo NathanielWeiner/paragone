@@ -7,7 +7,7 @@ class ArtObject < ActiveRecord::Base
   end
 
 	def self.get_artwork_objects
-		artwork_objects = TheWalters::ArtObject.all(:Page => 1, :pageSize => 25)['Items']
+		artwork_objects = TheWalters::ArtObject.all(:Page => 2, :pageSize => 25)['Items']
 
 		artwork_objects.each do |object|
 			id = object["ObjectID"]

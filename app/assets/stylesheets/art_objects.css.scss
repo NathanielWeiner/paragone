@@ -8,19 +8,20 @@ body {
 	font-size: 62.5%; /* 1em = 10px */
 }
 .navbar {
-	background: #FEF0C9;
+	background: #B22222;
 
 	.navbar-brand {
-		color: black;
+		color: white;
 		font-weight: bolder;
 		font-size: 1.5em;
+		font-family: 'Playfair Display SC', serif;
 	}
 
 	.navbar-toggle {
-		border: 1px solid black;
+		border: 1px solid white;
 
 		.icon-bar {
-			background: black;
+			background: white;
 		}
 	}
 
@@ -29,13 +30,17 @@ body {
 		padding: 0;
 		li {
 			&:nth-child(even) {
-				background: #FEF0C9;
+				background: #B22222;
 			}
 			&:nth-child(odd) {
 				background: url(marble-bg.png);
+				a {
+					color: black;
+				}
 			}
 			a {
-				color: black;
+				color: white;
+				font-weight: bolder;
 			}
 		}
 	}
@@ -44,6 +49,7 @@ body {
 .fa-search {
 	font-size: 2em;
 	padding-top: 0.3em;
+	color:white;
 }
 input[type=search] {
 	font-size: 1.5em;
@@ -51,12 +57,14 @@ input[type=search] {
 }
 
 .first-section {
-	margin-top: 3em;
 	height: 55em;
 
 	h1 {
-		font-size: 1.5em;
+		padding: 0;
+		margin: 0 0 1em 0;
+		font-size: 1.8em;
 		text-align: center;
+		font-family: 'Playfair Display SC', serif;
 	}
 }
 
@@ -68,6 +76,14 @@ input[type=search] {
 }
 .headroom--unpinned {
     transform: translateY(120%) !important;
+}
+
+.object-list {
+	margin-top: 2em;
+	img {
+		width: 4em;
+		height: 4em;
+	}
 }
 
 @media all and  (max-width: 767px) {
