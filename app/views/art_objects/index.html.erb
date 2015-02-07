@@ -1,5 +1,13 @@
 <div class="container-fluid first-section">
-	<h1>Walters' Top Picks</h1>
-	<div class="row">
-	</div>
+	<h1>Walters Top Picks</h1>
+	<% @art_objects.each do |object| %>
+		<div class="row object-list">
+			<div class="col-xs-3">
+				<img src='<%= object["PrimaryImage"]["Tiny"] %>' />
+			</div>
+			<div class="col-xs-9">
+				<%= object["Title"] %>
+			</div>
+		</div>
+	<% end %>
 </div>
