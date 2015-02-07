@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'thewalters'
 gem 'devise'
 gem 'nokogiri'
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -48,9 +49,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'dotenv-rails'
   gem 'hirb'
   gem 'pry-rails'
   gem 'pry-byebug'
 end
-
