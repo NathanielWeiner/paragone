@@ -9,6 +9,8 @@ gem 'twitter-bootstrap-rails'
 gem 'rails_12factor', group: :production
 gem 'headroom-rails'
 gem 'autoprefixer-rails'
+gem 'acts_as_votable'
+gem 'commontator'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

@@ -4,9 +4,14 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  get 'art_objects/index'
+  resources :art_objects do
+    member do
+      put 'like', to: 'art_objects#upvote'
+      put 'dislike', to: 'art_objects#downvote'
+    end
+  end
 
-  get 'art_objects/show'
+  mount Commontator::Engine => '/commontator'
 
   root to: 'art_objects#index'
 
