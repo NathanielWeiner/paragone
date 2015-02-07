@@ -7,7 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <ul>
+    <% if user_signed_in? %>
+      <li><%= link_to "Settings", edit_user_registration_path, :data => {:bypass => true} %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :data => {:bypass => true} %></li>
+    <% else %>
+      <li><%= link_to "Login", new_user_session_path %></li>
+      <li><%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %></li>
+      <li><%= link_to "Sign Up", new_registration_path(:user) %></li>
+    <% end %>
+  </ul>
 
+  <% if user_signed_in? %>
+    <% if current_user.provider == "twitter" %>
+      <p class="text-right">Signed in through twitter as <%= current_user.twitter_handle %></p>
+    <% else %>
+      <p class="text-right">Signed in as <%= current_user.email %></p>
+    <% end %>
+  <% end %>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 <%= yield %>
 
 </body>
