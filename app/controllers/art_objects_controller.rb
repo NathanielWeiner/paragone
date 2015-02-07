@@ -1,6 +1,7 @@
 class ArtObjectsController < ApplicationController
   def index
-  	@art_objects = ArtObject.get_artwork_objects
+    # binding.pry
+    @art_objects = ArtObject.get_artwork_objects
   end
 
   def show
