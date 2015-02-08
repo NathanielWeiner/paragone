@@ -13,12 +13,16 @@ class ArtObject < ActiveRecord::Base
     artwork_objects = TheWalters::ArtObject.all(:Page => 2, :pageSize => 25)['Items']
 
     artwork_objects.each do |object|
-      id = object['ObjectID']
-      num = object['ObjectNumber']
-      art_object = ArtObject.create_with(object_number: num).find_or_create_by(id: id)
-      object.append_merge!('score', art_object.score)
+    	ArtObject.get_artwork_object(object)
     end
     # binding.pry
     return artwork_objects
+  end
+
+  def self.get_artwork_object(object)
+  	id = object['ObjectID']
+    num = object['ObjectNumber']
+    art_object = ArtObject.create_with(object_number: num).find_or_create_by(id: id)
+    object.append_merge!('score', art_object.score)
   end
 end

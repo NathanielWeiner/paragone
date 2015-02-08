@@ -93,6 +93,16 @@ input[type=search] {
 	}
 }
 
+.show-section {
+	img {
+		width: 100%;
+	}
+	h4 {
+		text-align: center;
+		font-size: 1.2em;
+	}
+}
+
 @media all and  (max-width: 767px) {
 	.nav li {
 		width: 100%;

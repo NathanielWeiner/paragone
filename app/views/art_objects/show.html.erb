@@ -1,0 +1,32 @@
+<div class="container-fluid show-section">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-3">	
+			<img src='<%= @art_object["Images"][0]["ImageURLs"]["Medium"] %>' />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h4><strong><i><%= @art_object["Title"] %></i></strong></h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h4><%= @art_object["Creators"][0]["ConcatDisplayName"] %></h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h4><%= @art_object["DateText"] %></h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h4><%= @art_object["Medium"] %></h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h4><a href='<%= @art_object["ResourceURL"] %>'></a></h4>
+		</div>
+	</div>
+</div>
