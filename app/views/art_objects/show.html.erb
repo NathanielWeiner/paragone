@@ -1,10 +1,23 @@
 <div class="container-fluid show-section">
-	<div class="row">
-	<div class="col-xs-5 voteable">
-		<div class="row"><buttton class="btn btn-default">UpVote</buttton></div>
-		<div class="row"><%= @art_object.score %></div>
-		<div class="row"><buttton class="btn btn-default">DownVote</buttton></div>
-		<%= render "art_object" %>
+  <div class="row">
+  <div class="col-xs-5 voteable vote-count bind-<%= @ao.id %>">
+    <div class="row">
+      <% if(user_signed_in?) %>
+        <%= link_to like_art_object_path(@ao), :remote => true, method: :put, class: 'vpos' do %>
+          <button class="btn btn-default"><i class="fa fa-thumbs-up"></i></button>
+        <% end %>
+      <% end %>
+    </div>
+		<div class="row">
+      <span class="vcount-<%= @ao.id %>"><%= @ao.get_upvotes.size - @ao.get_downvotes.size %></span>  
+    </div>
+		<div class="row">
+      <% if(user_signed_in?) %>
+        <button class="btn btn-default"><i class="fa fa-thumbs-down"></i></button>
+        <%= link_to dislike_art_object_path(@ao), :remote => true, method: :put, class: 'npos' do %>
+       <% end %>
+      <% end %>
+    </div>
 	</div>
 		<div class="col-xs-7">
 			<img src='<%= @art_object["Images"][0]["ImageURLs"]["Raw"] %>' />
