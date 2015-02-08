@@ -6,4 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-curation = Curation.create()
+Curation.create( title: "Abram's Curations", description: "His favorite list of art")
+Curation.create( title: "Quint's Curations", description: "His better favorite list of art")

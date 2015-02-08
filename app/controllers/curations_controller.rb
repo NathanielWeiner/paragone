@@ -3,7 +3,7 @@ class CurationsController < ApplicationController
 
   # GET /curations
   def index
-    @curations = Curation.all
+    @curation = Curation.all
   end
 
   # GET /curations/1
