@@ -9,6 +9,7 @@ $(document).ready(function() {
     var objectId = $(".fa-twitter").attr('id');
     console.log(objectId);
     $.post("/art_objects/" + objectId + "/tweet_this", {theId: objectId}, function(data, status) {
+      alert("You Successfully Tweeted This!");
     });
   });
 });
