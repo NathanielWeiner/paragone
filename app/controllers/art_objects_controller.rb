@@ -5,7 +5,7 @@ class ArtObjectsController < ApplicationController
   end
 
   def show
-  	@art_object = TheWalters::ArtObject.find(params[:id]
+  	@art_object = TheWalters::ArtObject.find(params[:id])
   	ArtObject.get_artwork_object(@art_object) unless ArtObject.exists?(params[:id])
   end
 
