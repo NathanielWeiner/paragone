@@ -11,6 +11,7 @@ gem 'headroom-rails'
 gem 'autoprefixer-rails'
 gem 'acts_as_votable'
 gem 'commontator'
+gem 'twitter'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

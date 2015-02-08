@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     member do
       put 'like', to: 'art_objects#upvote'
       put 'dislike', to: 'art_objects#downvote'
+      post 'tweet_this', to: 'art_objects#tweet_this'
     end
   end
 

@@ -4,7 +4,7 @@ class ArtObjectsController < ApplicationController
     @art_object = ArtObject.new
   end
 
-  def show 
+  def show
     if(params[:id].scan('$').length == 1) #then search
       num = params[:id].to_s.gsub('$','.')
       @art_object = TheWalters::ArtObject.find(num)
@@ -25,7 +25,7 @@ class ArtObjectsController < ApplicationController
       "Do you think this work is naturalistic, idealized, abstract, or some combination? Why?",
       "What about this work do you think you can only see in person?",
       "How do you think the formal characteristics of the work relate to the subject matter?",
-      "What do you think the process of this work's creation looked like?", 
+      "What do you think the process of this work's creation looked like?",
       "Was this object created to be viewed standing still or in motion?",
       "How does this work relate to other works nearby in the gallery?",
       "What information would you like to learn more about this work?"]
@@ -76,4 +76,18 @@ class ArtObjectsController < ApplicationController
     end
   end
 
+  def tweet_this
+    art_object = TheWalters::ArtObject.find(params['theId'])
+    if art_object['Geographies'].nil?
+      historical_location = "scholars don't know!"
+    else
+      historical_location = art_object['Geographies'][0]['GeographyTerm']
+    end
+    title = art_object['Title'][0..30]
+    walters = '@walters_museum'
+    location = {}
+    tweet = "Visiting #{walters} and checking out #{title} from the #{historical_location}!"
+    current_user.tweet_to_twitter(tweet, location)
+    render nothing: true
+  end
 end

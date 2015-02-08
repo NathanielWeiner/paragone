@@ -1,6 +1,9 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def all
     user = User.from_omniauth(request.env["omniauth.auth"])
+    credentials = request.env["omniauth.auth"][:credentials]
+    user.update_attribute(:twitter_oauth_token, credentials[:token])
+    user.update_attribute(:twitter_oauth_secret, credentials[:secret])
     if user.persisted?
       flash.notice = "Signed in!"
       sign_in_and_redirect user
