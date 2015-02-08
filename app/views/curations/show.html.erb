@@ -1,8 +1,7 @@
 <div class="container-fluid first-section">
   <div class="row h1-tag"><h1>Curation Top Picks</h1></div>
-  <% @curation.art_objects.each do |ob| %>
-    <%= object = ArtObject.get_artwork_object(ob) %>
-    <%= link_to(art_object_path(object.id)) do %>
+  <% @art_objects.each do |object| %>
+    <%= link_to(art_object_path(object["ObjectID"])) do %>
       <div class="row object-list">
         <div class="col-xs-3">
           <img src='<%= object["Images"][0]["ImageURLs"]["Medium"] %>' />

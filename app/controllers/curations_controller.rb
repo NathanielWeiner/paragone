@@ -8,7 +8,12 @@ class CurationsController < ApplicationController
 
   # GET /curations/1
   def show
-
+    @curation = Curation.find(params[:id])
+    @art_objects = []
+    @curation.art_objects.each do |art_object|
+      @art_objects << TheWalters::ArtObject.find(art_object.id)
+      ArtObject.get_artwork_object(@art_object) unless ArtObject.exists?(params[:id])
+    end
   end
 
   # GET /curations/new
