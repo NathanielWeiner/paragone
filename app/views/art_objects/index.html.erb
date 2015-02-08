@@ -1,15 +1,17 @@
 <div class="container-fluid first-section">
 	<div class="row h1-tag"><h1>Walters Top Picks</h1></div>
-	<% @art_objects.each do |object| %>
-		<%= link_to(art_object_path(object["ObjectID"])) do %>
-			<div class="row object-list">
-				<div class="col-xs-3">
-					<img src='<%= object["PrimaryImage"]["Tiny"] %>' />
-				</div>
-				<div class="col-xs-9">
-					<%= "[ " + object.score.to_s + " ]  " + object["Title"] %>
-				</div>
-			</div>
-		<% end %>
-	<% end %>
+		<% sorted_objects = @art_objects.sort! { |x,y| y.score <=> x.score } %>
+			<% sorted_objects.each do |obj| %>
+
+				<%= link_to(art_object_path(obj["ObjectID"])) do %>
+					<div class="row object-list">
+						<div class="col-xs-3">
+							<img src='<%= obj["PrimaryImage"]["Tiny"] %>' />
+						</div>
+						<div class="col-xs-9">
+							<%= "[ " + obj.score.to_s + " ]  " + obj["Title"] %>
+						</div>
+					</div>
+				<% end %>		
+			<% end %>
 </div>
