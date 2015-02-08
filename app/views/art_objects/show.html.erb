@@ -1,6 +1,11 @@
 <div class="container-fluid show-section">
 	<div class="row">
-		<div class="col-xs-6 col-xs-offset-3">	
+	<div class="col-xs-5 voteable">
+		<div class="row"><buttton class="btn btn-default">UpVote</buttton></div>
+		<div class="row"><%= @art_object.score %></div>
+		<div class="row"><buttton class="btn btn-default">DownVote</buttton></div>
+	</div>
+		<div class="col-xs-7">	
 			<img src='<%= @art_object["Images"][0]["ImageURLs"]["Medium"] %>' />
 		</div>
 	</div>

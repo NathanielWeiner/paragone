@@ -103,6 +103,10 @@ input[type=search] {
 		font-size: 1.2em;
 	}
 	height: 120vh;
+	.voteable {
+		font-size: 1.8em;
+		text-align: center;
+	}
 }
 
 @media all and  (max-width: 767px) {
