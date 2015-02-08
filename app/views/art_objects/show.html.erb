@@ -9,7 +9,11 @@
       <% end %>
     </div>
 		<div class="row">
-      <span class="vcount-<%= @ao.id %>"><%= @ao.get_upvotes.size - @ao.get_downvotes.size %></span>  
+      <% if(!user_signed_in?) %>
+        <h5 class="total_votes">Total Votes:</h5>
+      <% end %>
+        <span class="vcount-<%= @ao.id %>"><%= @ao.get_upvotes.size - @ao.get_downvotes.size %></span>
+
     </div>
 		<div class="row">
       <% if(user_signed_in?) %>
