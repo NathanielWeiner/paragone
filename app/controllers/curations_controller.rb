@@ -12,7 +12,6 @@ class CurationsController < ApplicationController
     @art_objects = []
     @curation.art_objects.each do |art_object|
       @art_objects << TheWalters::ArtObject.find(art_object.id)
-      ArtObject.get_artwork_object(@art_object) unless ArtObject.exists?(params[:id])
     end
   end
 
