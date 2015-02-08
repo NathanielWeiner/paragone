@@ -121,6 +121,13 @@ input[type=search] {
   }
 }
 
+.green {
+  color:green !important;
+}
+
+.red {
+  color: red !important;
+}
 @media all and  (max-width: 767px) {
   .nav li {
     width: 100%;

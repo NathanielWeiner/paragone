@@ -4,7 +4,7 @@
     <div class="row">
       <% if(user_signed_in?) %>
         <%= link_to like_art_object_path(@ao), :remote => true, method: :put, class: 'vpos' do %>
-          <button class="btn btn-default"><i class="fa fa-thumbs-up"></i></button>
+          <button class="btn btn-default green"><i class="fa fa-thumbs-up"></i></button>
         <% end %>
       <% end %>
     </div>
@@ -12,12 +12,11 @@
       <% if(!user_signed_in?) %>
         <h5 class="total_votes">Total Votes:</h5>
       <% end %>
-        <span class="vcount-<%= @ao.id %>"><%= @ao.get_upvotes.size - @ao.get_downvotes.size %></span>
-
+      <span class="vcount-<%= @ao.id %>"><%= @ao.get_upvotes.size - @ao.get_downvotes.size %></span>
     </div>
 		<div class="row">
       <% if(user_signed_in?) %>
-        <button class="btn btn-default"><i class="fa fa-thumbs-down"></i></button>
+        <button class="btn btn-default red"><i class="fa fa-thumbs-down"></i></button>
         <%= link_to dislike_art_object_path(@ao), :remote => true, method: :put, class: 'npos' do %>
        <% end %>
       <% end %>
