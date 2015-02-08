@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, omniauth_providers: [:twitter]
 
+  acts_as_voter
   acts_as_commontator
 
   def self.from_omniauth(auth)

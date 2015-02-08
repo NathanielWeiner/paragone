@@ -1,0 +1,3 @@
+$('.vpos').bind('ajax:success', function() {
+ $('.vcount-<%= @art_object.id %>').html('<%=escape_javascript @art_object.get_upvotes.size.to_s %>');
+});

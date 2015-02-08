@@ -4,6 +4,7 @@
 		<div class="row"><buttton class="btn btn-default">UpVote</buttton></div>
 		<div class="row"><%= @art_object.score %></div>
 		<div class="row"><buttton class="btn btn-default">DownVote</buttton></div>
+		<%= render "art_object" %>
 	</div>
 		<div class="col-xs-7">
 			<img src='<%= @art_object["Images"][0]["ImageURLs"]["Raw"] %>' />
