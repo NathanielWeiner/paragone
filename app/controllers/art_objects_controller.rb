@@ -9,6 +9,21 @@ class ArtObjectsController < ApplicationController
 		ArtObject.get_artwork_object(@art_object) unless ArtObject.exists?(params[:id])
 		@ao = ArtObject.find(params[:id])
 		@art_object.append_merge!('score', @ao.score)
+
+    question_prompts = [
+        "What is the effect of this work? What purpose might it serve?",
+        "How are figures and objects arranged in space within the composition?",
+        "What viewpoint does the artist give you? How does it affect your understanding of the image? Does the artist use perspective?",
+        "How does this work reflect the culture/society in which it was created?",
+        "Do you think this work is naturalistic, idealized, abstract, or some combination? Why?",
+        "What about this work do you think you can only see in person?",
+        "How do you think the formal characteristics of the work relate to the subject matter?",
+        "What do you think the process of this work's creation looked like?", 
+        "Was this object created to be viewed standing still or in motion?",
+        "How does this work relate to other works nearby in the gallery?",
+        "What information would you like to learn more about this work?"]
+
+    @random_question = question_prompts[rand(0..10)]
   end
 
   # def upvote
