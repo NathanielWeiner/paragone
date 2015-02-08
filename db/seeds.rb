@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-abram = Curation.create( title: "Abram's Curations", description: "His favorite list of art")
-quint = Curation.create( title: "Quint's Curations", description: "His better favorite list of art")
+abram = Curation.find_or_create_by!( title: "Abram's Curations", description: "His favorite list of art" )
+quint = Curation.find_or_create_by!( title: "Quint's Curations", description: "His better favorite list of art")
 
 ids = [15642, 10416, 492, 6997, 27564, 20010, 10681, 37626, 4432, 30663]
 
@@ -16,8 +16,6 @@ artwork_objects = []
 ids.each do |id|
   artwork_objects << TheWalters::ArtObject.find(id)
 end
-
-abrams =[]
 
 artwork_objects.each do |object|
   id = object['ObjectID']
