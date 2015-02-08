@@ -135,8 +135,16 @@ input[type=search] {
   text-align: center;
   margin: auto !important; 
   background: #efefef;
-  width: 3em;
+  width: 2.5em;
+  border: 1px solid black;
   border-radius: 0.2em;
+  border-right: 3px solid grey;
+  border-bottom: 3px solid grey;
+  transition: 0.2s;
+}
+
+.twitter:hover {
+  border: 0;
 }
 @media all and  (max-width: 767px) {
   .nav li {
