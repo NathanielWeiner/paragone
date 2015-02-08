@@ -1,13 +1,15 @@
 <div class="container-fluid first-section">
 	<div class="row h1-tag"><h1>Walters Top Picks</h1></div>
 	<% @art_objects.each do |object| %>
-		<div class="row object-list">
-			<div class="col-xs-3">
-				<img src='<%= object["PrimaryImage"]["Tiny"] %>' />
+		<%= link_to(art_object_path(object["ObjectID"])) do %>
+			<div class="row object-list">
+				<div class="col-xs-3">
+					<img src='<%= object["PrimaryImage"]["Tiny"] %>' />
+				</div>
+				<div class="col-xs-9">
+					<%= "[ " + object.score.to_s + " ]  " + object["Title"] %>
+				</div>
 			</div>
-			<div class="col-xs-9">
-				<%= "[ " + object.score.to_s + " ]  " + object["Title"] %>
-			</div>
-		</div>
+		<% end %>
 	<% end %>
 </div>

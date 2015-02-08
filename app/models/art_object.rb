@@ -12,7 +12,7 @@ class ArtObject < ActiveRecord::Base
     artwork_objects.each do |object|
       id = object['ObjectID']
       num = object['ObjectNumber']
-      art_object = ArtObject.create_with(object_number:num).find_or_create_by(object_id: id)
+      art_object = ArtObject.create_with(object_number: num).find_or_create_by(id: id)
       object.append_merge!('score', art_object.score)
     end
     # binding.pry
