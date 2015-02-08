@@ -6,5 +6,25 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Curation.create( title: "Abram's Curations", description: "His favorite list of art")
-Curation.create( title: "Quint's Curations", description: "His better favorite list of art")
+abram = Curation.create( title: "Abram's Curations", description: "His favorite list of art")
+quint = Curation.create( title: "Quint's Curations", description: "His better favorite list of art")
+
+ids = [15642, 10416, 492, 6997, 27564, 20010, 10681, 37626, 4432, 30663]
+
+artwork_objects = []
+
+ids.each do |id|
+  artwork_objects << TheWalters::ArtObject.find(id)
+end
+
+abrams =[]
+
+artwork_objects.each do |object|
+  id = object['ObjectID']
+  num = object['ObjectNumber']
+  art_object = ArtObject.create_with(object_number: num, curation_id: abram.id).find_or_create_by(id: id)
+  object.append_merge!('score', art_object.score)
+  abram.art_objects << art_object
+  abram.save
+end
+

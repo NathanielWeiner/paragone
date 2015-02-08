@@ -8,6 +8,7 @@ class CurationsController < ApplicationController
 
   # GET /curations/1
   def show
+    @art_objects = ArtObject.get_artwork_objects
   end
 
   # GET /curations/new
