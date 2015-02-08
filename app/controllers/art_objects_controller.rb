@@ -7,8 +7,8 @@ class ArtObjectsController < ApplicationController
   def show
   	@art_object = TheWalters::ArtObject.find(params[:id])
 		ArtObject.get_artwork_object(@art_object) unless ArtObject.exists?(params[:id])
-		ao = ArtObject.find(params[:id])
-		@art_object.append_merge!('score', ao.score)
+		@ao = ArtObject.find(params[:id])
+		@art_object.append_merge!('score', @ao.score)
   end
 
   def upvote
