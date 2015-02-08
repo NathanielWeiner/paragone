@@ -47,6 +47,11 @@
 			<h4><%= @art_object["Medium"] %></h4>
 		</div>
 	</div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h4>Location: <br/><%= @art_object["MuseumLocation"]["DisplayCurrentLocation"] %></h4>
+    </div>
+  </div>
 	<div class="row">
 		<div class="col-xs-12">
 			<h4><a href='<%= @art_object["ResourceURL"] %>' target="_blank">Click here for more information</a></h4>
