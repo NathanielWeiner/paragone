@@ -137,6 +137,11 @@ input[type=search] {
   margin: auto !important; 
 }
 
+.total_score_list {
+  font-size: 2.5em;
+  color: black;
+}
+
 @media all and  (max-width: 767px) {
   .nav li {
     width: 100%;

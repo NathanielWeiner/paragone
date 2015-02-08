@@ -8,10 +8,19 @@
 						<div class="col-xs-3">
 							<img src='<%= obj["PrimaryImage"]["Tiny"] %>' />
 						</div>
-						<div class="col-xs-9">
-							<%= "[ " + obj.score.to_s + " ]  " + obj["Title"] %>
-						</div>
+            <div class="col-xs-7">
+              <%= obj["Title"] %>
+            </div>
+            <div class="col-xs-1 total_score_list">
+              <% if obj.score > 0 %>
+                <span class="green"><%= obj.score.to_s %></span>
+              <% elsif obj.score < 0 %>
+                <span class="red"><%= obj.score.to_s %></span>
+              <% else %>
+                <span><%= obj.score.to_s %></span>
+              <% end %>
+            </div>
 					</div>
-				<% end %>		
+				<% end %>
 			<% end %>
 </div>
