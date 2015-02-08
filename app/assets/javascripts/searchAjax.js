@@ -3,7 +3,12 @@ $(document).ready(function() {
     var objectId = $(".search-value").val();
     console.log(objectId)
     $.post('/art_objects', {id: objectId}, function(data, status) {
-      console.log("hey");
+    });
+  });
+  $(".fa-twitter").on("click", function(){ 
+    var objectId = $(".fa-twitter").attr('id');
+    console.log(objectId);
+    $.post('/art_objects', {theId: objectId}, function(data, status) {
     });
   });
 });
