@@ -1,4 +1,7 @@
 class ArtObject < ActiveRecord::Base
+
+  has_and_belongs_to_many :curations
+
   acts_as_votable
   acts_as_commontable
 

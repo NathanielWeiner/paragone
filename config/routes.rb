@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :curations
+
   mount Commontator::Engine => '/commontator'
 
   root to: 'art_objects#index'

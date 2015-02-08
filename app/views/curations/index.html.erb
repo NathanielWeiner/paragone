@@ -1,0 +1,12 @@
+<div class="container-fluid first-section">
+  <div class="row h1-tag"><h1>Curation Top Picks</h1></div>
+  <% @acuration.each do |object| %>
+    <div class="row object-list">
+      <div class="col-xs-3">
+      </div>
+      <div class="col-xs-9">
+        <%= object["Title"] %>
+      </div>
+    </div>
+  <% end %>
+</div>
